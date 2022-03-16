@@ -21,3 +21,21 @@
         http://localhost:1234/?token=7137121825535e9cfabc38ac45ad0e26f9aff7b131c95534
     ```
 
+3. Now open a command prompt from your local computer and execute following command. Note I am using Identity .pem file to authenticate myself to EC2 instance
+   
+   ```
+   ssh -i credential.pem -NL 1234:localhost:1234 ec2-user@<ip-address>
+   ```
+
+4. Now open up your computer's browser and visit `localhost:1234`. Input the token obtained in step 2 and you are good to go.
+
+
+5. If you get 500 Internal server error while opening a jupyter notebook. You may need to downgrade your tornado and nbconvert python module (https://github.com/scrapinghub/splash/issues/887)
+
+    ```
+    pip uninstall tornado
+    pip uninstall nbconvert
+    pip install nbconvert==5.3.1
+    pip install tornado==4.2
+    ```
+
