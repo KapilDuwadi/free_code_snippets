@@ -26,3 +26,9 @@ Login to MySQL workbench with following information
 - Port: 3306 (Change if necessary)
 - Username: root (Change if necessary)
 - Password: mysecretpassword (Change if necessary)
+
+
+### Running REDIS docker container
+```
+docker run --name some-redis -d -p 6379:6379 redis
+```
